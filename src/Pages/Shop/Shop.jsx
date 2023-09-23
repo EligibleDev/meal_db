@@ -11,15 +11,15 @@ const Shop = () => {
     const loadFood = (category) => {
         fetch(`https://www.themealdb.com/api/json/v1/1/filter.php?c=${category.strCategory}`)
             .then(res => res.json())
-            .then(data => setFoods(data.meals))
+            .then(data => setFoods(data.meals));
 
     }
 
     useEffect(() => {
-        loadFood(restaurant.categories[0])
-    }, [])
+        loadFood(restaurant.categories[0]);
+    }, [restaurant.categories]);
 
-    // loadFood(restaurant)
+    // loadFood(restaurant.categories[0]);
 
     return (
         <>
@@ -33,8 +33,8 @@ const Shop = () => {
             {foods.length === 0
                 ? <h1 className="text-5xl flex justify-center items-center h-96 font-bold">There is nothing here</h1>
                 : <div className="grid grid-cols-4 gap-6 max-w-screen-xl mx-auto my-8">
-                        {foods.map(food => < FoodCard key={food.idMeal} food={food} />)}
-                </div>
+                    {foods.map(food => < FoodCard key={food.idMeal} food={food} />)}
+                  </div>
             }
         </>
     );

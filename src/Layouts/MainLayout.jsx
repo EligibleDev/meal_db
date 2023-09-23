@@ -4,6 +4,7 @@ import Footer from "../Components/Footer";
 
 const MainLayout = () => {
     const navigation = useNavigation();
+    console.log(navigation.state)
 
     return (
         <>
@@ -11,8 +12,9 @@ const MainLayout = () => {
             <div className="min-h-screen">
                 {navigation.state === "loading"
                     ? <span className="loading loading-dots w-20 mx-auto h-96 flex items-center"></span>
-                    : <Outlet />
+                    : <Outlet/>
                 }
+                {/* <Outlet/> */}
             </div>
             <Footer />
         </>
