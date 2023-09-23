@@ -17,7 +17,7 @@ const Shop = () => {
 
     useEffect(() => {
         loadFood(restaurant.categories[0]);
-    }, [restaurant.categories]);
+    }, []);
 
     // loadFood(restaurant.categories[0]);
 

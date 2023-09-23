@@ -10,11 +10,11 @@ const MainLayout = () => {
         <>
             <Header />
             <div className="min-h-screen">
-                {navigation.state === "loading"
+                {/* {navigation.state === "loading"
                     ? <span className="loading loading-dots w-20 mx-auto h-96 flex items-center"></span>
                     : <Outlet/>
-                }
-                {/* <Outlet/> */}
+                } */}
+                <Outlet/>
             </div>
             <Footer />
         </>
