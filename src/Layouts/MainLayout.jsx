@@ -1,15 +1,20 @@
-import { Outlet } from "react-router-dom";
+import { Outlet, useNavigation } from "react-router-dom";
 import Header from "../Components/Header";
 import Footer from "../Components/Footer";
 
 const MainLayout = () => {
+    const navigation = useNavigation();
+
     return (
         <>
-            <Header/>
+            <Header />
             <div className="min-h-screen">
-                <Outlet/>
+                {navigation.state === "loading"
+                    ? <span className="loading loading-dots w-20 mx-auto h-96 flex items-center"></span>
+                    : <Outlet />
+                }
             </div>
-            <Footer/>
+            <Footer />
         </>
     );
 };
